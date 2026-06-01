@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Abdelmohsen — IT Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #050d1a;
+    --navy2: #0a1628;
+    --navy3: #0f2040;
+    --blue: #1a6cf0;
+    --blue-dim: #0e4aab;
+    --teal: #00c4a1;
+    --teal-dim: #007a65;
+    --offwhite: #e8e4dc;
+    --muted: #7a8899;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: var(--navy);
+    color: var(--offwhite);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(5,13,26,0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px;
+    letter-spacing: 0.5px; color: var(--offwhite); text-decoration: none;
+  }
+  .nav-logo span { color: var(--teal); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted);
+    text-decoration: none; letter-spacing: 0.5px; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-cta {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--teal);
+    border: 1px solid var(--teal-dim); padding: 6px 14px; text-decoration: none;
+    letter-spacing: 0.5px; transition: background 0.2s, color 0.2s;
+  }
+  .nav-cta:hover { background: var(--teal); color: var(--navy); }
+
+  .hero {
+    max-width: 1100px; margin: 0 auto;
+    padding: 6rem 2.5rem 5rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  .hero-eyebrow {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--teal);
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 10px;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-eyebrow::before { content:''; display:inline-block; width:28px; height:1px; background:var(--teal); }
+  .hero-name {
+    font-family: 'Syne', sans-serif; font-size: clamp(40px,5vw,66px);
+    font-weight: 800; line-height: 1.0; letter-spacing: -1.5px; color: #fff;
+    margin-bottom: 0.5rem; animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero-name .outline { color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.3); }
+  .hero-role {
+    font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--muted);
+    margin-bottom: 1.8rem; animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-role span { color: var(--blue); }
+  .hero-desc {
+    font-size: 15px; color: rgba(232,228,220,0.72); line-height: 1.8;
+    font-weight: 300; max-width: 440px; margin-bottom: 2.4rem;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.6s 0.4s ease both; }
+  .btn-primary {
+    background: var(--blue); color: #fff; font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px; letter-spacing: 0.5px; padding: 12px 24px;
+    text-decoration: none; border: none; cursor: pointer; transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1558cc; }
+  .btn-outline {
+    background: transparent; color: var(--offwhite); font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px; letter-spacing: 0.5px; padding: 12px 24px;
+    text-decoration: none; border: 1px solid var(--border2); transition: border-color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--offwhite); }
+  .hero-panel {
+    background: var(--navy2); border: 1px solid var(--border2); padding: 2rem;
+    animation: fadeUp 0.6s 0.5s ease both;
+  }
+  .panel-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--muted);
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);
+  }
+  .stat-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 0.7rem 0; border-bottom: 1px solid var(--border);
+  }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-label { font-size: 12px; color: var(--muted); font-weight: 300; }
+  .stat-val { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 600; color: var(--offwhite); }
+  .stat-val.accent { color: var(--teal); }
+  .status-dot {
+    display: inline-block; width: 7px; height: 7px; background: var(--teal);
+    border-radius: 50%; margin-right: 6px; animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+
+  .divider { height: 1px; background: var(--border); }
+
+  section.main-sec {
+    max-width: 1100px; margin: 0 auto; padding: 5rem 2.5rem;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem;
+  }
+  .sec-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--teal); opacity: 0.7; }
+  .sec-title { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 700; color: #fff; letter-spacing: -0.5px; }
+  .sec-line { flex: 1; height: 1px; background: var(--border2); }
+
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; }
+  .about-text { font-size: 15px; color: rgba(232,228,220,0.72); line-height: 1.85; font-weight: 300; }
+  .about-text p + p { margin-top: 1.2rem; }
+  .hl { color: var(--offwhite); font-weight: 400; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.5rem; }
+  .tag {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    color: #378ADD; background: rgba(55,138,221,0.1); border: 1px solid rgba(55,138,221,0.22);
+    padding: 4px 10px; letter-spacing: 0.3px;
+  }
+  .tag.t { color: var(--teal); background: rgba(0,196,161,0.08); border-color: rgba(0,196,161,0.2); }
+
+  .timeline { position: relative; padding-left: 1.5rem; }
+  .timeline::before { content:''; position:absolute; left:0; top:6px; bottom:6px; width:1px; background:var(--border2); }
+  .tl-item { position: relative; padding-left: 1rem; margin-bottom: 2rem; }
+  .tl-item::before {
+    content:''; position:absolute; left:-1.55rem; top:6px;
+    width:7px; height:7px; background:var(--teal); border:2px solid var(--navy); border-radius:50%;
+  }
+  .tl-date { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--muted); margin-bottom:3px; }
+  .tl-role { font-family:'Syne',sans-serif; font-size:14px; font-weight:600; color:#fff; margin-bottom:2px; }
+  .tl-org { font-size:12px; color:var(--blue); margin-bottom:6px; }
+  .tl-desc { font-size:12px; color:var(--muted); line-height:1.6; font-weight:300; }
+
+  .certs-grid {
+    display: grid; grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+    gap: 1px; background: var(--border);
+  }
+  .cert-card {
+    background: var(--navy2); padding: 1.75rem;
+    transition: background 0.2s; position: relative; overflow: hidden;
+  }
+  .cert-card::after {
+    content:''; position:absolute; bottom:0;left:0;right:0; height:2px;
+    background:transparent; transition:background 0.2s;
+  }
+  .cert-card:hover { background: var(--navy3); }
+  .cert-card:hover::after { background: var(--teal); }
+  .cert-badge {
+    font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:1.5px;
+    text-transform:uppercase; padding:3px 8px; margin-bottom:1rem; display:inline-block;
+  }
+  .cisco { color:#1ba0d8; background:rgba(27,160,216,0.1); border:1px solid rgba(27,160,216,0.2); }
+  .msft  { color:#7fba00; background:rgba(127,186,0,0.1);  border:1px solid rgba(127,186,0,0.2); }
+  .ibm   { color:#0f62fe; background:rgba(15,98,254,0.1);  border:1px solid rgba(15,98,254,0.2); }
+  .other { color:var(--muted); background:rgba(122,136,153,0.1); border:1px solid rgba(122,136,153,0.2); }
+  .cert-name { font-family:'Syne',sans-serif; font-size:14px; font-weight:600; color:#fff; line-height:1.35; margin-bottom:0.5rem; }
+  .cert-date { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--muted); }
+  .cert-link {
+    display:inline-flex; align-items:center; gap:5px;
+    font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--teal);
+    text-decoration:none; margin-top:1rem; opacity:0.7; transition:opacity 0.2s;
+  }
+  .cert-link:hover { opacity:1; }
+  .cert-link::before { content:'↗'; }
+
+  .skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+  .skill-group { background:var(--navy2); border:1px solid var(--border); padding:1.5rem; }
+  .sg-title {
+    font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:1.5px;
+    text-transform:uppercase; color:var(--teal); margin-bottom:1.2rem;
+    padding-bottom:0.7rem; border-bottom:1px solid var(--border);
+  }
+  .skill-list { list-style:none; }
+  .skill-item {
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0.45rem 0; border-bottom:1px solid rgba(255,255,255,0.04);
+    font-size:13px; color:rgba(232,228,220,0.8); font-weight:300;
+  }
+  .skill-item:last-child { border-bottom:none; }
+  .bar { width:60px; height:2px; background:var(--border2); position:relative; overflow:hidden; }
+  .bar-fill { position:absolute; left:0;top:0;bottom:0; background:var(--teal); }
+
+  .edu-card {
+    background:var(--navy2); border:1px solid var(--border2); padding:2.5rem;
+    display:grid; grid-template-columns:auto 1fr; gap:2rem; align-items:start;
+  }
+  .edu-icon {
+    width:52px; height:52px; background:rgba(26,108,240,0.12); border:1px solid rgba(26,108,240,0.2);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Syne',sans-serif; font-weight:800; font-size:18px; color:var(--blue); flex-shrink:0;
+  }
+  .edu-degree { font-family:'Syne',sans-serif; font-size:20px; font-weight:700; color:#fff; margin-bottom:0.35rem; }
+  .edu-school { font-size:13px; color:var(--blue); margin-bottom:0.5rem; }
+  .edu-meta { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted); margin-bottom:1.2rem; }
+
+  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
+  .contact-head {
+    font-family:'Syne',sans-serif; font-size:40px; font-weight:800; color:#fff;
+    line-height:1.1; letter-spacing:-1px; margin-bottom:1.2rem;
+  }
+  .contact-head span { color:transparent; -webkit-text-stroke:1px rgba(255,255,255,0.3); }
+  .contact-sub { font-size:14px; color:var(--muted); line-height:1.7; font-weight:300; margin-bottom:2rem; }
+  .contact-links { display:flex; flex-direction:column; gap:1px; }
+  .c-link {
+    display:flex; align-items:center; gap:1rem; padding:1rem 1.25rem;
+    background:var(--navy2); border:1px solid var(--border); text-decoration:none;
+    transition:border-color 0.2s,background 0.2s; color:inherit;
+  }
+  .c-link:hover { border-color:var(--border2); background:var(--navy3); }
+  .c-icon {
+    width:32px; height:32px; background:rgba(0,196,161,0.1); border:1px solid rgba(0,196,161,0.15);
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; color:var(--teal); font-family:'IBM Plex Mono',monospace; flex-shrink:0;
+  }
+  .c-label { font-size:10px; color:var(--muted); font-family:'IBM Plex Mono',monospace; letter-spacing:0.5px; }
+  .c-val { font-size:13px; color:var(--offwhite); }
+  .c-arrow { font-size:12px; color:var(--muted); margin-left:auto; }
+
+  footer {
+    border-top:1px solid var(--border); text-align:center; padding:2rem;
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted);
+  }
+
+  @media (max-width:768px) {
+    nav { padding:0 1.25rem; }
+    .nav-links { display:none; }
+    .hero, .about-grid, .contact-grid { grid-template-columns:1fr; }
+    .hero { padding:3.5rem 1.25rem; }
+    section.main-sec { padding:3.5rem 1.25rem; }
+    .skills-grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Ahmed<span>.</span>dev</a>
+  <ul class="nav-links">
+    <li><a href="#about">about</a></li>
+    <li><a href="#certifications">certs</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#education">education</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+  <a href="ahmed_abdelmohsen_cv.html" class="nav-cta" target="_blank">download cv</a>
+</nav>
+
+<div class="hero" id="home">
+  <div>
+    <div class="hero-eyebrow">IT Specialist &nbsp;·&nbsp; Open to work</div>
+    <h1 class="hero-name">Ahmed<br><span class="outline">Abdelmohsen</span></h1>
+    <p class="hero-role">Network &amp; Security &nbsp;·&nbsp; <span>Alexandria, Egypt</span></p>
+    <p class="hero-desc">BTech Information Technology graduate. Cisco CCNA certified. Microsoft Security certified. I build reliable networks, understand security frameworks, and write code that solves real problems.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">get in touch</a>
+      <a href="#certifications" class="btn-outline">view credentials</a>
+    </div>
+  </div>
+  <div class="hero-panel">
+    <div class="panel-label">// current status</div>
+    <div class="stat-row">
+      <span class="stat-label">Availability</span>
+      <span class="stat-val accent"><span class="status-dot"></span>Open to work</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Location</span>
+      <span class="stat-val">Alexandria, Egypt</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Work mode</span>
+      <span class="stat-val">On-site · Hybrid · Remote</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Certifications</span>
+      <span class="stat-val accent">5 verified</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Education</span>
+      <span class="stat-val">BTech IT · 2025</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Credly</span>
+      <span class="stat-val" style="font-size:11px;font-family:'IBM Plex Mono',monospace;color:var(--muted);">5 badges verified ↗</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section class="main-sec" id="about">
+  <div class="sec-head">
+    <span class="sec-num">01</span>
+    <h2 class="sec-title">About me</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="about-grid">
+    <div>
+      <div class="about-text">
+        <p>I'm an IT Specialist and recent graduate in Information Technology from the Egyptian E-Learning University, with a strong focus on <span class="hl">network infrastructure and cybersecurity</span>. My certifications are intentional — I completed the full Cisco CCNA track and earned the Microsoft SC-900 to build a foundation that's both broad and verifiable.</p>
+        <p>Beyond networking, I'm comfortable writing code in Python, Java, C++, and JavaScript — skills developed through coursework and personal projects. I approach problems analytically and communicate clearly, qualities sharpened during my time managing client pipelines in a sales role.</p>
+        <p>I'm currently <span class="hl">actively seeking full-time roles</span> in IT support, network operations, or security — on-site, hybrid, or remote.</p>
+      </div>
+      <div class="tags">
+        <span class="tag">TCP/IP</span>
+        <span class="tag">Routing &amp; Switching</span>
+        <span class="tag">VLANs</span>
+        <span class="tag">Zero Trust</span>
+        <span class="tag t">Python</span>
+        <span class="tag t">Java</span>
+        <span class="tag t">C++</span>
+        <span class="tag t">SQL</span>
+        <span class="tag t">JavaScript</span>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">Sep 2024 – Nov 2024</div>
+        <div class="tl-role">Telesales Agent</div>
+        <div class="tl-org">Elements Business Development · Remote, Egypt</div>
+        <div class="tl-desc">Qualified and managed property sales leads via CRM tools, met call-volume targets, and collaborated on outreach strategy.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Sep 2024</div>
+        <div class="tl-role">Microsoft SC-900 Certified</div>
+        <div class="tl-org">Microsoft</div>
+        <div class="tl-desc">Identity &amp; Access Management, Microsoft Defender, compliance frameworks, and Zero Trust security model.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Jan 2024</div>
+        <div class="tl-role">CCNA: Switching, Routing &amp; Wireless</div>
+        <div class="tl-org">Cisco Networking Academy</div>
+        <div class="tl-desc">OSPF, EIGRP, VLANs, STP, inter-VLAN routing, wireless LAN design — built and troubleshot multi-layer topologies in Packet Tracer.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Oct 2021 – present</div>
+        <div class="tl-role">BTech, Information Technology</div>
+        <div class="tl-org">Egyptian E-Learning University (EELU)</div>
+        <div class="tl-desc">CS fundamentals, networking, programming (Python, Java, C++), databases and communication systems.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="main-sec" id="certifications">
+  <div class="sec-head">
+    <span class="sec-num">02</span>
+    <h2 class="sec-title">Certifications</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="certs-grid">
+    <div class="cert-card">
+      <span class="cert-badge cisco">Cisco</span>
+      <div class="cert-name">CCNAv7: Switching, Routing &amp; Wireless Essentials</div>
+      <div class="cert-date">Issued Jan 2024</div>
+      <a href="https://www.credly.com/users/ahmed-mohamed-abdemohsen/badges" target="_blank" class="cert-link">Verify on Credly</a>
+    </div>
+    <div class="cert-card">
+      <span class="cert-badge cisco">Cisco</span>
+      <div class="cert-name">CCNAv7: Introduction to Networks</div>
+      <div class="cert-date">Issued Jul 2023</div>
+      <a href="https://www.credly.com/users/ahmed-mohamed-abdemohsen/badges" target="_blank" class="cert-link">Verify on Credly</a>
+    </div>
+    <div class="cert-card">
+      <span class="cert-badge msft">Microsoft</span>
+      <div class="cert-name">Security, Compliance &amp; Identity Fundamentals (SC-900)</div>
+      <div class="cert-date">Issued Sep 2024</div>
+      <a href="https://www.credly.com/users/ahmed-mohamed-abdemohsen/badges" target="_blank" class="cert-link">Verify on Credly</a>
+    </div>
+    <div class="cert-card">
+      <span class="cert-badge ibm">IBM SkillsBuild</span>
+      <div class="cert-name">Working in a Digital World: Professional Skills</div>
+      <div class="cert-date">Issued Mar 2025</div>
+      <a href="https://www.credly.com/users/ahmed-mohamed-abdemohsen/badges" target="_blank" class="cert-link">Verify on Credly</a>
+    </div>
+    <div class="cert-card">
+      <span class="cert-badge other">STSmart</span>
+      <div class="cert-name">Robotics Level 1</div>
+      <div class="cert-date">Issued Sep 2023</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="main-sec" id="skills">
+  <div class="sec-head">
+    <span class="sec-num">03</span>
+    <h2 class="sec-title">Skills</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="sg-title">Networking</div>
+      <ul class="skill-list">
+        <li class="skill-item">TCP/IP &amp; Subnetting <div class="bar"><div class="bar-fill" style="width:90%"></div></div></li>
+        <li class="skill-item">Routing (OSPF, EIGRP) <div class="bar"><div class="bar-fill" style="width:85%"></div></div></li>
+        <li class="skill-item">Switching &amp; VLANs <div class="bar"><div class="bar-fill" style="width:85%"></div></div></li>
+        <li class="skill-item">Wireless LAN Design <div class="bar"><div class="bar-fill" style="width:75%"></div></div></li>
+        <li class="skill-item">STP &amp; EtherChannel <div class="bar"><div class="bar-fill" style="width:70%"></div></div></li>
+        <li class="skill-item">Network Troubleshooting <div class="bar"><div class="bar-fill" style="width:80%"></div></div></li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="sg-title">Security</div>
+      <ul class="skill-list">
+        <li class="skill-item">Security Fundamentals <div class="bar"><div class="bar-fill" style="width:80%"></div></div></li>
+        <li class="skill-item">Identity &amp; Access Mgmt <div class="bar"><div class="bar-fill" style="width:75%"></div></div></li>
+        <li class="skill-item">Compliance Frameworks <div class="bar"><div class="bar-fill" style="width:70%"></div></div></li>
+        <li class="skill-item">Zero Trust Model <div class="bar"><div class="bar-fill" style="width:70%"></div></div></li>
+        <li class="skill-item">Microsoft Defender <div class="bar"><div class="bar-fill" style="width:65%"></div></div></li>
+        <li class="skill-item">Risk Management <div class="bar"><div class="bar-fill" style="width:65%"></div></div></li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="sg-title">Programming</div>
+      <ul class="skill-list">
+        <li class="skill-item">Python <div class="bar"><div class="bar-fill" style="width:80%"></div></div></li>
+        <li class="skill-item">Java <div class="bar"><div class="bar-fill" style="width:70%"></div></div></li>
+        <li class="skill-item">C++ <div class="bar"><div class="bar-fill" style="width:65%"></div></div></li>
+        <li class="skill-item">JavaScript / HTML <div class="bar"><div class="bar-fill" style="width:65%"></div></div></li>
+        <li class="skill-item">SQL <div class="bar"><div class="bar-fill" style="width:60%"></div></div></li>
+        <li class="skill-item">OOP Principles <div class="bar"><div class="bar-fill" style="width:75%"></div></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="main-sec" id="education">
+  <div class="sec-head">
+    <span class="sec-num">04</span>
+    <h2 class="sec-title">Education</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="edu-card">
+    <div class="edu-icon">IT</div>
+    <div>
+      <div class="edu-degree">Bachelor of Technology — Information Technology</div>
+      <div class="edu-school">The Egyptian E-Learning University (EELU)</div>
+      <div class="edu-meta">Oct 2021 – Sep 2025 &nbsp;·&nbsp; Grade: 4 &nbsp;·&nbsp; Alexandria, Egypt</div>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Problem Solving</span>
+        <span class="tag">Computer Science</span>
+        <span class="tag">Communication</span>
+        <span class="tag t">Databases</span>
+        <span class="tag t">Networking</span>
+        <span class="tag t">OOP</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="main-sec" id="contact">
+  <div class="sec-head">
+    <span class="sec-num">05</span>
+    <h2 class="sec-title">Contact</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="contact-grid">
+    <div>
+      <h3 class="contact-head">Let's work<br><span>together.</span></h3>
+      <p class="contact-sub">I'm actively looking for opportunities in IT support, network engineering, or security operations. Remote, hybrid, or on-site — I'd love to hear from you.</p>
+      <a href="ahmed_abdelmohsen_cv.html" target="_blank" class="btn-primary">Download full CV →</a>
+    </div>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/ahmed-mohamed-abdelmohsen-3b8501226/" target="_blank" class="c-link">
+        <div class="c-icon">in</div>
+        <div style="flex:1">
+          <div class="c-label">LinkedIn</div>
+          <div class="c-val">ahmed-mohamed-abdelmohsen</div>
+        </div>
+        <div class="c-arrow">↗</div>
+      </a>
+      <a href="https://www.credly.com/users/ahmed-mohamed-abdemohsen/badges" target="_blank" class="c-link">
+        <div class="c-icon" style="font-size:10px;">cr</div>
+        <div style="flex:1">
+          <div class="c-label">Credly — verified badges</div>
+          <div class="c-val">5 credentials · Cisco, Microsoft, IBM</div>
+        </div>
+        <div class="c-arrow">↗</div>
+      </a>
+      <div class="c-link" style="cursor:default;">
+        <div class="c-icon" style="font-size:10px;">eg</div>
+        <div style="flex:1">
+          <div class="c-label">Location</div>
+          <div class="c-val">Alexandria, Egypt · Open to remote</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>Ahmed Mohamed Abdelmohsen &nbsp;·&nbsp; IT Specialist &nbsp;·&nbsp; Alexandria, Egypt &nbsp;·&nbsp; 2025</footer>
+
+</body>
+</html>
