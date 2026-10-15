@@ -1,420 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ahmed Mohamed Abdelmohsen — CV</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV – Ahmed Mohamed Abdelmohsen</title>
+<meta name="description" content="CV of Ahmed Mohamed Abdelmohsen, IT specialist in networks, security and AI. Available immediately.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 10.5pt;
-    color: #1a1a1a;
-    background: #f5f3ef;
-    padding: 2.5rem;
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
-  }
-
-  .page {
-    max-width: 780px;
-    margin: 0 auto;
-    background: #fff;
-    border: 0.5px solid #d4d0c8;
-  }
-
-  /* Header */
-  .header {
-    background: #1a2332;
-    color: #fff;
-    padding: 2.4rem 2.8rem 2rem;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 1rem;
-    align-items: end;
-  }
-
-  .header-name {
-    font-family: 'EB Garamond', serif;
-    font-size: 30pt;
-    font-weight: 500;
-    letter-spacing: -0.5px;
-    line-height: 1.1;
-    color: #fff;
-  }
-
-  .header-title {
-    font-family: 'EB Garamond', serif;
-    font-size: 13pt;
-    font-weight: 400;
-    font-style: italic;
-    color: #8fa8c8;
-    margin-top: 0.3rem;
-  }
-
-  .header-contact {
-    text-align: right;
-    font-size: 8.5pt;
-    color: #8fa8c8;
-    line-height: 1.9;
-    font-weight: 300;
-  }
-
-  .header-contact a { color: #8fa8c8; text-decoration: none; }
-
-  /* Accent stripe */
-  .stripe {
-    height: 3px;
-    background: linear-gradient(90deg, #2a7de1 0%, #1a9e75 50%, #2a7de1 100%);
-  }
-
-  /* Body layout */
-  .body {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-  }
-
-  /* Sidebar */
-  .sidebar {
-    background: #f9f8f5;
-    border-right: 0.5px solid #e5e2da;
-    padding: 2rem 1.4rem;
-  }
-
-  .sidebar-section { margin-bottom: 1.8rem; }
-
-  .sidebar-heading {
-    font-size: 7pt;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #2a7de1;
-    margin-bottom: 0.7rem;
-    padding-bottom: 0.35rem;
-    border-bottom: 0.5px solid #d4d0c8;
-  }
-
-  .sidebar-item {
-    font-size: 8.5pt;
-    color: #2a2a2a;
-    line-height: 1.6;
-    margin-bottom: 0.3rem;
-  }
-
-  .sidebar-item .label {
-    display: block;
-    font-size: 7.5pt;
-    color: #888;
-    font-weight: 300;
-    margin-top: 0.1rem;
-  }
-
-  .cert-badge {
-    background: #fff;
-    border: 0.5px solid #d4d0c8;
-    border-radius: 3px;
-    padding: 0.45rem 0.6rem;
-    margin-bottom: 0.5rem;
-    font-size: 8pt;
-    line-height: 1.4;
-  }
-
-  .cert-badge .cert-name { color: #1a2332; font-weight: 500; }
-  .cert-badge .cert-issuer { color: #2a7de1; font-size: 7.5pt; }
-  .cert-badge .cert-date { color: #999; font-size: 7pt; }
-
-  .skill-tag {
-    display: inline-block;
-    font-size: 7.5pt;
-    background: #e8f0fb;
-    color: #185fa5;
-    border-radius: 2px;
-    padding: 2px 6px;
-    margin: 2px 2px 2px 0;
-  }
-
-  /* Main content */
-  .main {
-    padding: 2rem 2.2rem;
-  }
-
-  .section { margin-bottom: 1.7rem; }
-
-  .section-heading {
-    font-size: 8pt;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #2a7de1;
-    margin-bottom: 0.9rem;
-    padding-bottom: 0.35rem;
-    border-bottom: 0.5px solid #d4d0c8;
-  }
-
-  /* Summary */
-  .summary {
-    font-size: 9.5pt;
-    line-height: 1.75;
-    color: #333;
-  }
-
-  /* Experience */
-  .exp-item { margin-bottom: 1.3rem; }
-
-  .exp-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.15rem;
-  }
-
-  .exp-role {
-    font-weight: 500;
-    font-size: 10pt;
-    color: #1a2332;
-  }
-
-  .exp-date {
-    font-size: 7.5pt;
-    color: #999;
-    white-space: nowrap;
-  }
-
-  .exp-company {
-    font-size: 8.5pt;
-    color: #2a7de1;
-    margin-bottom: 0.5rem;
-  }
-
-  .exp-bullets {
-    list-style: none;
-    padding: 0;
-  }
-
-  .exp-bullets li {
-    font-size: 8.5pt;
-    color: #444;
-    line-height: 1.65;
-    padding-left: 0.85rem;
-    position: relative;
-    margin-bottom: 0.2rem;
-  }
-
-  .exp-bullets li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: #2a7de1;
-    font-size: 7.5pt;
-  }
-
-  /* Education */
-  .edu-item { margin-bottom: 0.8rem; }
-  .edu-degree { font-weight: 500; font-size: 9.5pt; color: #1a2332; }
-  .edu-school { font-size: 8.5pt; color: #2a7de1; }
-  .edu-meta { font-size: 7.5pt; color: #999; margin-top: 0.1rem; }
-
-  /* Print */
-  @media print {
-    body { background: #fff; padding: 0; }
-    .page { border: none; max-width: 100%; }
-  }
-
-  @page { size: A4; margin: 0; }
+:root{
+  --bg:#F5F7FB; --paper:#FFFFFF; --ink:#0F1B2D; --muted:#51607A; --line:#D8E0EE; --blue:#0E47CB; --blue-ink:#FFFFFF;
+  --serif:"Fraunces", Georgia, "Times New Roman", serif;
+  --sans:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0C1424; --paper:#121C30; --ink:#E8EEF9; --muted:#9AA8C2; --line:#243350; --blue:#7FA6FF; --blue-ink:#0C1424}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 .97rem/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.bar{max-width:860px;margin:0 auto;padding:18px 20px 0;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between}
+.bar .acts{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;padding:8px 14px;border-radius:8px;font-weight:600;text-decoration:none;border:1.5px solid var(--blue);font-size:.92rem;cursor:pointer;font-family:inherit}
+.btn.primary{background:var(--blue);color:var(--blue-ink)}
+.btn.ghost{background:transparent;color:var(--blue)}
+.sheet{max-width:860px;margin:14px auto 40px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:44px 48px}
+h1{font:700 2rem/1.1 var(--serif);margin:0 0 6px;letter-spacing:-.01em}
+.headline{margin:0 0 12px;color:var(--muted);font-size:1.05rem}
+.contact{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:2px 20px;font-size:.92rem}
+h2{font:700 1.2rem/1.2 var(--serif);color:var(--blue);margin:30px 0 4px;padding-bottom:6px;border-bottom:1.5px solid var(--blue)}
+.row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:2px 22px;padding:10px 0 0}
+.when{color:var(--muted);font-size:.9rem;padding-top:2px}
+h3{font:600 1rem/1.35 var(--sans);margin:0}
+.org{color:var(--muted);font-size:.92rem}
+ul{margin:6px 0 0;padding-left:1.1rem}
+li{margin:0 0 4px}
+p{margin:6px 0 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem;margin-top:8px}
+th,td{text-align:left;padding:6px 10px 6px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:.85rem}
+.skills{display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 22px;margin:10px 0 0}
+.skills dt{font-weight:600;font-size:.92rem}
+.skills dd{margin:0;font-size:.92rem}
+@media (max-width:640px){
+  .sheet{padding:26px 20px;border-radius:0;border-left:0;border-right:0}
+  .row,.skills{grid-template-columns:1fr;gap:0}
+  .skills dd{margin-bottom:6px}
+}
+@media print{
+  :root{--bg:#fff;--paper:#fff;--ink:#000;--muted:#444;--line:#ccc;--blue:#0E47CB}
+  body{font-size:10pt}
+  .bar{display:none}
+  .sheet{border:0;border-radius:0;margin:0;padding:0;max-width:none}
+  .row{break-inside:avoid}
+  h2{break-after:avoid}
+  a{color:inherit;text-decoration:none}
+  @page{size:A4;margin:14mm}
+}
 </style>
 </head>
 <body>
-<div class="page">
-
-  <!-- Header -->
-  <div class="header">
-    <div>
-      <div class="header-name">Ahmed Mohamed<br>Abdelmohsen</div>
-      <div class="header-title">IT Specialist · Network &amp; Security Engineer</div>
-    </div>
-    <div class="header-contact">
-      Alexandria, Egypt<br>
-      Open to: On-site · Hybrid · Remote<br>
-      linkedin.com/in/ahmed-mohamed-abdelmohsen-3b8501226<br>
-      Available immediately
-    </div>
-  </div>
-  <div class="stripe"></div>
-
-  <!-- Body -->
-  <div class="body">
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-
-      <div class="sidebar-section">
-        <div class="sidebar-heading">Certifications</div>
-
-        <div class="cert-badge">
-          <div class="cert-name">Microsoft Certified: Security, Compliance &amp; Identity Fundamentals</div>
-          <div class="cert-issuer">Microsoft</div>
-          <div class="cert-date">Sep 2024</div>
-        </div>
-
-        <div class="cert-badge">
-          <div class="cert-name">CCNAv7: Switching, Routing &amp; Wireless Essentials</div>
-          <div class="cert-issuer">Cisco</div>
-          <div class="cert-date">Jan 2024</div>
-        </div>
-
-        <div class="cert-badge">
-          <div class="cert-name">CCNAv7: Introduction to Networks</div>
-          <div class="cert-issuer">Cisco</div>
-          <div class="cert-date">Jul 2023</div>
-        </div>
-
-        <div class="cert-badge">
-          <div class="cert-name">Working in a Digital World: Professional Skills</div>
-          <div class="cert-issuer">IBM SkillsBuild</div>
-          <div class="cert-date">Mar 2025</div>
-        </div>
-
-        <div class="cert-badge">
-          <div class="cert-name">Robotics Level 1</div>
-          <div class="cert-issuer">STSmart</div>
-          <div class="cert-date">Sep 2023</div>
-        </div>
-      </div>
-
-      <div class="sidebar-section">
-        <div class="sidebar-heading">Networking</div>
-        <span class="skill-tag">TCP/IP</span>
-        <span class="skill-tag">Routing</span>
-        <span class="skill-tag">Switching</span>
-        <span class="skill-tag">VLANs</span>
-        <span class="skill-tag">Wireless</span>
-        <span class="skill-tag">Network Switches</span>
-        <span class="skill-tag">Subnetting</span>
-      </div>
-
-      <div class="sidebar-section">
-        <div class="sidebar-heading">Security</div>
-        <span class="skill-tag">Security Fundamentals</span>
-        <span class="skill-tag">Compliance &amp; Identity</span>
-        <span class="skill-tag">Risk Management</span>
-        <span class="skill-tag">Zero Trust</span>
-      </div>
-
-      <div class="sidebar-section">
-        <div class="sidebar-heading">Programming</div>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Java</span>
-        <span class="skill-tag">C++</span>
-        <span class="skill-tag">JavaScript</span>
-        <span class="skill-tag">HTML</span>
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">OOP</span>
-      </div>
-
-      <div class="sidebar-section">
-        <div class="sidebar-heading">Soft Skills</div>
-        <span class="skill-tag">Problem Solving</span>
-        <span class="skill-tag">Communication</span>
-        <span class="skill-tag">CRM</span>
-        <span class="skill-tag">Customer Service</span>
-        <span class="skill-tag">Teamwork</span>
-      </div>
-
-      <div class="sidebar-section">
-        <div class="sidebar-heading">Languages</div>
-        <div class="sidebar-item">Arabic <span class="label">Native</span></div>
-        <div class="sidebar-item">English <span class="label">Professional</span></div>
-      </div>
-
-    </div>
-
-    <!-- Main -->
-    <div class="main">
-
-      <div class="section">
-        <div class="section-heading">Professional Summary</div>
-        <p class="summary">
-          Motivated IT Specialist and recent Information Technology graduate with hands-on knowledge in network infrastructure, cybersecurity fundamentals, and software development. Holds Cisco CCNA and Microsoft Security certifications, demonstrating a structured understanding of routing, switching, identity management, and compliance frameworks. Proven ability to communicate technical solutions clearly, with additional background in customer-facing environments. Eager to contribute to an IT, network support, or security operations team.
-        </p>
-      </div>
-
-      <div class="section">
-        <div class="section-heading">Experience</div>
-
-        <div class="exp-item">
-          <div class="exp-header">
-            <div class="exp-role">Telesales Agent</div>
-            <div class="exp-date">Sep 2024 – Nov 2024</div>
-          </div>
-          <div class="exp-company">Elements Business Development · Full-time · Remote, Egypt</div>
-          <ul class="exp-bullets">
-            <li>Contacted property owners via phone to evaluate interest in selling, qualifying and progressing leads through a structured sales pipeline.</li>
-            <li>Maintained accurate records of interactions and pipeline status using CRM tools, improving follow-up efficiency.</li>
-            <li>Consistently met call-volume and qualification targets, demonstrating strong communication and organizational skills.</li>
-            <li>Collaborated with the sales team to refine outreach scripts and objection-handling strategies.</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="section">
-        <div class="section-heading">Education</div>
-        <div class="edu-item">
-          <div class="edu-degree">Bachelor of Technology — Information Technology</div>
-          <div class="edu-school">The Egyptian E-Learning University (EELU)</div>
-          <div class="edu-meta">Oct 2021 – Sep 2025 · Grade: 4 · Skills: Python, Problem Solving, Computer Science, Communication</div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-heading">Technical Projects &amp; Training</div>
-
-        <div class="exp-item">
-          <div class="exp-header">
-            <div class="exp-role">Cisco Networking Academy — CCNA Track</div>
-            <div class="exp-date">2023 – 2024</div>
-          </div>
-          <ul class="exp-bullets">
-            <li>Completed two-part CCNA curriculum covering IP addressing, OSPF/EIGRP routing, VLAN configuration, STP, inter-VLAN routing, and wireless network design.</li>
-            <li>Built and troubleshot multi-layer switched networks and routed topologies using Cisco Packet Tracer simulations.</li>
-          </ul>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-header">
-            <div class="exp-role">Microsoft Security, Compliance &amp; Identity Fundamentals</div>
-            <div class="exp-date">2024</div>
-          </div>
-          <ul class="exp-bullets">
-            <li>Studied core concepts of identity &amp; access management, threat protection, compliance management, and Zero Trust security principles in Microsoft environments.</li>
-          </ul>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-header">
-            <div class="exp-role">Robotics Level 1 — STSmart</div>
-            <div class="exp-date">2023</div>
-          </div>
-          <ul class="exp-bullets">
-            <li>Developed foundational robotics programming skills, applying logic, sensors, and control systems to hardware projects.</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="section">
-        <div class="section-heading">Credly Verified Badges</div>
-        <p style="font-size:8.5pt; color:#444; line-height:1.7;">
-          All credentials verified and publicly accessible at:<br>
-          <span style="color:#2a7de1;">credly.com/users/ahmed-mohamed-abdemohsen/badges</span>
-        </p>
-      </div>
-
-    </div>
+<div class="bar">
+  <a href="index.html">Back to portfolio</a>
+  <div class="acts">
+    <a class="btn primary" href="ahmed_abdelmohsen_cv.pdf">Download PDF</a>
+    <button class="btn ghost" type="button" onclick="window.print()">Print</button>
   </div>
 </div>
+
+<main class="sheet">
+  <header>
+    <h1>Ahmed Mohamed Abdelmohsen</h1>
+    <p class="headline">IT Specialist · Network &amp; Security Engineer</p>
+    <ul class="contact">
+      <li>New Damietta, Damietta, Egypt</li>
+      <li><a href="mailto:ahmedmhsn234@gmail.com">ahmedmhsn234@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/ahmed-mohamed-abdelmohsen-3b8501226/">linkedin.com/in/ahmed-mohamed-abdelmohsen-3b8501226</a></li>
+      <li><a href="https://github.com/grim41">github.com/grim41</a></li>
+      <li><a href="https://www.credly.com/users/ahmed-mohamed-abdelmohsen3">credly.com/users/ahmed-mohamed-abdelmohsen3</a></li>
+    </ul>
+  </header>
+
+  <section>
+    <h2>Personal information</h2>
+    <div class="row"><div class="when">Nationality</div><div>Egyptian</div></div>
+    <div class="row"><div class="when">Availability</div><div>Available immediately</div></div>
+  </section>
+
+  <section>
+    <h2>About me</h2>
+    <p>Motivated IT Specialist and recent Information Technology graduate with hands-on knowledge in network infrastructure, cybersecurity fundamentals, and software development. Holds Cisco CCNA and Microsoft Security certifications, demonstrating a structured understanding of routing, switching, identity management, and compliance frameworks. Able to communicate technical solutions clearly, with additional background in customer-facing environments. Seeking to contribute to an IT, network support, or security operations team.</p>
+  </section>
+
+  <section>
+    <h2>Work experience</h2>
+    <div class="row">
+      <div class="when">Sep 2024 – Nov 2024</div>
+      <div>
+        <h3>Telesales Agent</h3>
+        <div class="org">Elements Business Development · Full-time · Remote, Egypt</div>
+        <ul>
+          <li>Contacted property owners in the United States by phone to evaluate interest in selling, qualifying and progressing leads through a structured sales pipeline.</li>
+          <li>Maintained accurate records of interactions and pipeline status using CRM tools, improving follow-up efficiency.</li>
+          <li>Consistently met call-volume and qualification targets, demonstrating strong communication and organisational skills.</li>
+          <li>Collaborated with the sales team to refine outreach scripts and objection-handling strategies.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education and training</h2>
+
+    <div class="row">
+      <div class="when">Oct 2021 – Sep 2025</div>
+      <div>
+        <h3>Bachelor of Science in Computers and Information Technology</h3>
+        <div class="org">The Egyptian E-Learning University (EELU) · GPA: 2.7 / 4.0</div>
+        <p>Main subjects: programming, data structures and algorithms, operating systems, databases, web technology, software engineering, artificial intelligence and machine learning, computer networks and security, embedded systems, mathematics and statistics.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when">Graduation project<br>2024 – 2025</div>
+      <div>
+        <h3>Personal Plant Care Assistant and Identifier</h3>
+        <div class="org">Project leader · Final grade: Excellent</div>
+        <ul>
+          <li>Led a team of seven (AI, front-end, back-end) building a web application that identifies plants, detects plant diseases from photos, and gives plant care guidance with watering reminders.</li>
+          <li>Worked on the AI part: trained and compared CNN, ResNet-50, EfficientNetB3 and YOLO models on the PlantVillage dataset (54,303 images, 38 classes), and deployed the chosen CNN (about 92% validation accuracy) as an API with FastAPI.</li>
+          <li>Created the plant care dataset (web-scraped and LLM-augmented): 126 entries across 16 plant categories, covering ideal soil moisture, temperature, light hours, soil pH, NPK ratio, watering schedule, humidity, and a plant description.</li>
+          <li>Worked with the back-end team on email watering reminders, and with the front-end team on an installable desktop and phone app version of the website.</li>
+          <li>Tools: Python, TensorFlow, scikit-learn, Matplotlib, FastAPI, GitHub.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when">2023 – 2024</div>
+      <div>
+        <h3>Cisco Networking Academy – CCNA Track</h3>
+        <ul>
+          <li>Completed the two-part CCNA curriculum covering IP addressing, OSPF/EIGRP routing, VLAN configuration, STP, inter-VLAN routing, and wireless network design.</li>
+          <li>Built and troubleshot multi-layer switched networks and routed topologies using Cisco Packet Tracer simulations.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when">2024</div>
+      <div>
+        <h3>Microsoft Security, Compliance &amp; Identity Fundamentals</h3>
+        <ul><li>Studied identity and access management, threat protection, compliance management, and Zero Trust security principles in Microsoft environments.</li></ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when">19 Sep 2023</div>
+      <div>
+        <h3>Robotics Level 1 – STSmart (50 hours)</h3>
+        <ul>
+          <li>Developed foundational robotics programming skills, applying logic, sensors, and control systems to hardware projects.</li>
+          <li>Hands-on training with Arduino circuits: built a Bluetooth car controlled from a mobile phone, a voice-controlled car, and a hand-gesture-controlled car.</li>
+          <li>Built a car reversing alert that beeps when an object is close, and a red, yellow and green traffic light system.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when">1 – 3 Sep 2025</div>
+      <div>
+        <h3>Applications of Artificial Intelligence</h3>
+        <div class="org">The British University in Egypt – School of Continuing Education (Faculty of Engineering) · 15 hours · Certificate of attendance</div>
+        <ul><li>Course combining theory lectures and hands-on practical training, delivered in cooperation with MediX.</li></ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when">Nov 2025 – Mar 2026</div>
+      <div>
+        <h3>Egypt Future Initiative (Misr Al-Mostaqbal) – Vision 2030</h3>
+        <div class="org">Harvest · Qualification programme for students and graduates</div>
+        <ul>
+          <li>English Language Diploma: general English and conversation, covering reading, writing, speaking, listening and translation. Reached level 12, the highest level available at the time.</li>
+          <li>ICDL (computer driving licence) diploma: Windows, Word, PowerPoint, Excel, Access, IT and Internet.</li>
+          <li>Personal and community development diploma: soft skills including interview skills, communication, time management, and presentation skills.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when">18 – 20 Apr 2026</div>
+      <div>
+        <h3>First Aid Training</h3>
+        <ul>
+          <li>CPR (cardiopulmonary resuscitation) and blood pressure measurement.</li>
+          <li>Caring for a person in a diabetic emergency (sugar coma).</li>
+          <li>Caring for road accident casualties (car or motorcycle): checking injuries, calling for emergency help, positioning, and lifting and moving them to safety.</li>
+          <li>Recognising the different types of wounds.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when">28 hours</div>
+      <div>
+        <h3>Medical Analysis Course</h3>
+        <div class="org">Middle East Paramedics · Egyptian Syndicate of Scientific Professions</div>
+        <ul>
+          <li>Blood drawing and arterial sampling.</li>
+          <li>ESR and ABO blood group tests.</li>
+          <li>Fasting blood sugar (FBS), peripheral blood smear (PBS) and HbA1c tests.</li>
+          <li>Laboratory analysis machines and how they are used.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    <table>
+      <thead><tr><th>Certification</th><th>Issuer</th><th>Date</th></tr></thead>
+      <tbody>
+        <tr><td>Medical Analysis Course (28 hours)</td><td>Egyptian Syndicate of Scientific Professions</td><td>Apr 2026</td></tr>
+        <tr><td>Medical Analysis Course (28 hours)</td><td>Middle East Paramedics</td><td></td></tr>
+        <tr><td>Applications of Artificial Intelligence (15 hours)</td><td>The British University in Egypt</td><td>Sep 2025</td></tr>
+        <tr><td>Microsoft Certified: Security, Compliance &amp; Identity Fundamentals</td><td>Microsoft</td><td>Sep 2024</td></tr>
+        <tr><td>CCNAv7: Switching, Routing &amp; Wireless Essentials</td><td>Cisco</td><td>Jan 2024</td></tr>
+        <tr><td>CCNAv7: Introduction to Networks</td><td>Cisco</td><td>Jul 2023</td></tr>
+        <tr><td>Working in a Digital World: Professional Skills</td><td>IBM SkillsBuild</td><td>Mar 2025</td></tr>
+        <tr><td>Robotics Level 1 (50 hours)</td><td>STSmart</td><td>Sep 2023</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Personal skills</h2>
+    <dl class="skills">
+      <dt>Languages</dt><dd>Arabic (mother tongue) · English – C1 (Advanced)</dd>
+      <dt>Networking</dt><dd>TCP/IP routing, switching and VLANs, wireless network switches, subnetting</dd>
+      <dt>Security</dt><dd>Security fundamentals, compliance and identity, risk management, Zero Trust</dd>
+      <dt>AI and machine learning</dt><dd>Deep learning (CNN, transfer learning with ResNet-50 and EfficientNetB3, YOLO), TensorFlow, scikit-learn, data preprocessing, model deployment with FastAPI</dd>
+      <dt>Programming</dt><dd>Python, Java, C++, JavaScript, HTML, SQL, object-oriented programming</dd>
+      <dt>Interpersonal</dt><dd>Problem solving, communication, teamwork, customer service, CRM</dd>
+    </dl>
+  </section>
+</main>
 </body>
 </html>
